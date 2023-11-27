@@ -1,0 +1,14 @@
+<!-- login.component.html -->
+<ion-content>
+  <!-- Formulario para iniciar sesión -->
+  <ion-item>
+    <ion-label position="stacked">Usuario</ion-label>
+    <ion-input [(ngModel)]="nombreUsuario" placeholder="Nombre de Usuario"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Contraseña</ion-label>
+    <ion-input [(ngModel)]="contrasenaUsuario" type="password" placeholder="Contraseña"></ion-input>
+  </ion-item>
+  <ion-button (click)="iniciarSesion()">Iniciar Sesión</ion-button>
+  <ion-button (click)="registrarse()">Registrarse</ion-button>
+</ion-content>

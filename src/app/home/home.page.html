@@ -1,0 +1,90 @@
+<!-- home.page.html -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-title-left">
+      <ion-icon name="logo-ionic"></ion-icon>
+<ion-icon name="logo-ionic" size="large"></ion-icon>
+<ion-icon name="logo-ionic"></ion-icon>
+      TeLLevoAPP 
+      <ion-icon name="logo-ionic"></ion-icon>
+<ion-icon name="logo-ionic" size="large"></ion-icon>
+<ion-icon name="logo-ionic"></ion-icon>
+      
+    </ion-title>
+    <ion-buttons slot="end">
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content [fullscreen]="true">
+
+  <div *ngIf="usuarioActual">
+    <!-- Lista de conductores con vehículo -->
+    <ion-list *ngIf="conductoresConAuto.length > 0">
+      <div class="color1">
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Mercedes-simplex-508.jpg" />
+          <ion-card-header>
+            <ion-card-title>Viaja Seguro</ion-card-title>
+            <ion-card-subtitle>Encuentra a tu chofer preferido. Viaja seguro y tranquilo con Te LLevo App</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </div>  
+      <ion-list-header>
+        Conductores con Vehículo
+      </ion-list-header>
+      <ion-item *ngFor="let conductor of conductoresConAuto">
+        {{ conductor.nombre }}
+      </ion-item>
+      <ion-button (click)="solicitarViaje()">Solicitar Viaje</ion-button>
+    </ion-list>
+
+    <!-- Lista de pasajeros (usuarios sin vehículo) -->
+    <ion-list *ngIf="pasajeros.length > 0">
+      <div class="color1">
+        <ion-card>
+          <img alt="Silhouette of mountains" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Mercedes-simplex-508.jpg" />
+          <ion-card-header>
+            <ion-card-title>Viaja Seguro</ion-card-title>
+            <ion-card-subtitle>Encuentra a tu chofer preferido. Viaja seguro y tranquilo con Te LLevo App</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </div> 
+      <ion-list-header>
+        Pasajeros (Usuarios sin Vehículo)
+      </ion-list-header>
+      <ion-item *ngFor="let pasajero of pasajeros">
+        {{ pasajero.nombre }}
+      </ion-item>
+      <ion-button (click)="aceptarViaje()">Aceptar viaje del pasajero</ion-button>
+    </ion-list>
+
+
+    <!-- Botón para cerrar sesión -->
+    <ion-button (click)="cerrarSesion()">Cerrar Sesión</ion-button>
+  </div>
+  <div *ngIf="!usuarioActual">
+    
+    <div class="color1">
+      <ion-card>
+        <img alt="Silhouette of mountains" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Mercedes-simplex-508.jpg" />
+        <ion-card-header>
+          <ion-card-title>Viaja Seguro</ion-card-title>
+          <ion-card-subtitle>Encuentra a tu chofer preferido. Viaja seguro y tranquilo con Te LLevo App</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div>
+
+    <p>Inicia sesión para ver la información.</p>
+    <ion-button routerLink="/login">Iniciar Sesión</ion-button>
+    <ion-button (click)="irARegistro()">Registrar</ion-button>
+  </div>
+
+</ion-content>
