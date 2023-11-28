@@ -1,14 +1,25 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>
+      Iniciar Sesión
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
 <!-- login.component.html -->
-<ion-content>
+<ion-content class="ion-padding" >
+  
   <!-- Formulario para iniciar sesión -->
-  <ion-item>
-    <ion-label position="stacked">Usuario</ion-label>
-    <ion-input [(ngModel)]="nombreUsuario" placeholder="Nombre de Usuario"></ion-input>
+  <ion-item class="ion-margin-bottom">
+    <ion-input label="Usuario: " [(ngModel)]="nombreUsuario" placeholder="Nombre de Usuario"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Contraseña</ion-label>
-    <ion-input [(ngModel)]="contrasenaUsuario" type="password" placeholder="Contraseña"></ion-input>
-  </ion-item>
-  <ion-button (click)="iniciarSesion()">Iniciar Sesión</ion-button>
-  <ion-button (click)="registrarse()">Registrarse</ion-button>
+  <ion-item class="ion-margin-bottom">
+    
+    <ion-input label="Contraseña: " [(ngModel)]="contrasenaUsuario" type="password" placeholder="Contraseña"></ion-input>
+  </ion-item >
+  <div class="ion-text-center">
+    <ion-button class="ion-margin-end" (click)="iniciarSesion()">Iniciar Sesión</ion-button>
+    <ion-button (click)="registrarse()">Registrarse</ion-button>
+  </div>
 </ion-content>

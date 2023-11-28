@@ -1,18 +1,26 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>
+      Registro De Usuario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <!-- registro.component.html -->
-<ion-content>
+<ion-content class="ion-padding">
   <!-- Formulario para registrar nuevos usuarios -->
-  <ion-item>
-    <ion-label position="stacked">Nuevo Usuario</ion-label>
-    <ion-input [(ngModel)]="nombreUsuario" placeholder="Nombre"></ion-input>
+  <ion-item class="ion-margin-bottom">
+    
+    <ion-input label="Nombre" [(ngModel)]="nombreUsuario" placeholder="Nombre"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Contraseña</ion-label>
-    <ion-input [(ngModel)]="contrasenaUsuario" type="password" placeholder="Contraseña"></ion-input>
+  <ion-item class="ion-margin-bottom">
+    <ion-input label="Contraseña" [(ngModel)]="contrasenaUsuario" type="password" placeholder="Contraseña"></ion-input>
   </ion-item>
-  <ion-item>
+  <ion-item class="ion-margin-bottom">
     <ion-checkbox [(ngModel)]="tieneAuto" aria-label="Tiene Auto">Tiene auto</ion-checkbox>
   </ion-item>  
-  <ion-button (click)="registrarUsuario()">Registrar Usuario</ion-button>
-  <ion-button (click)="cerrarSesion()">Volver</ion-button>
-
+  <div class="ion-text-center">
+    <ion-button class="ion-margin-end" (click)="registrarUsuario()">Registrar</ion-button>
+    <ion-button (click)="cerrarSesion()">Volver</ion-button>
+  </div>
 </ion-content>
